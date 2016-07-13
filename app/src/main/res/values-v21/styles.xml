@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Customize for only Lollipop and above . -->
+   <style name="MaterialTheme." parent="ParentMaterialTheme">
+
+   </style>
+
+    <!-- Required api level 21 (Lollipop)-->
+    <!--<style name="AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+</resources>
