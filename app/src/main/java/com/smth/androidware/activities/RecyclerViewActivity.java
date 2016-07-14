@@ -110,7 +110,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL); //Can also be horizontal
         recyclerView.setLayoutManager(mLinearLayoutManager);
-
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
