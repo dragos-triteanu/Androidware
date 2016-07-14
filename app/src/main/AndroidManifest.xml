@@ -9,9 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
         <activity android:name=".activities.ToolbarActivity">
+        </activity>
+        <activity android:name=".activities.RecyclerViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

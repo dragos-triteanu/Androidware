@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
 
 /**
  * Toolbar illustrative implementation that works on android pre lvl 21.
- * This toolbar also displays the coding style used for providing apps with toolbars.
+ * This component_toolbar also displays the coding style used for providing apps with toolbars.
  */
 public class ToolbarActivity extends AppCompatActivity {
 
@@ -37,13 +37,13 @@ public class ToolbarActivity extends AppCompatActivity {
     }
 
     /**
-     * Setups the toolbar for illustrative purposes in order to contain a search button, the android popup menu
+     * Setups the component_toolbar for illustrative purposes in order to contain a search button, the android popup menu
      * and branding details such as logo or title.
      */
     private void setupToolbar() {
         toolbar.setTitle("Thiscounts!");
         toolbar.setLogo(R.mipmap.ic_logo);
-        toolbar.inflateMenu(R.menu.manu_main);
+        toolbar.inflateMenu(R.menu.menu_main);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
