@@ -10,9 +10,8 @@
         android:theme="@style/MaterialTheme">
         <activity android:name=".activities.ToolbarActivity" />
         <activity android:name=".activities.RecyclerViewActivity" />
-        <activity android:name=".activities.NavigationDrawerActivity"></activity>
-        <activity android:name=".activities.AnimationsActivity">
-        </activity>
+        <activity android:name=".activities.NavigationDrawerActivity" />
+        <activity android:name=".activities.AnimationsActivity" />
         <activity android:name=".activities.TransitionActivity" />
         <activity android:name=".activities.SharedElementActivity" />
         <activity android:name=".activities.MainActivity">
@@ -22,6 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.SimpleViewPagerActivity" />
+        <activity android:name=".activities.FragmentViewPagerActivity"></activity>
     </application>
 
 </manifest>

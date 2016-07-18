@@ -44,6 +44,20 @@
             android:text="Animations Activity"
             android:layout_weight="1"/>
 
+        <Button
+            android:id="@+id/goToSimpleViewPager"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Simple View Pager"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/goToFragmentViewPager"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Fragment View Pager"
+            android:layout_weight="1"/>
+
 
     </LinearLayout>
 

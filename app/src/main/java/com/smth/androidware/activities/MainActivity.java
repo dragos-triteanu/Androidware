@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.goToAnimations)
     Button goToAnimations;
 
+    @BindView(R.id.goToSimpleViewPager)
+    Button goToSimpleViewPager;
+
+    @BindView(R.id.goToFragmentViewPager)
+    Button goToFragmentViewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,5 +69,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        goToSimpleViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SimpleViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goToFragmentViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,FragmentViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
