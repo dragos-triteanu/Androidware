@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.SimpleViewPagerActivity" />
-        <activity android:name=".activities.FragmentViewPagerActivity"></activity>
+        <activity android:name=".activities.FragmentViewPagerActivity" />
+        <activity android:name=".activities.TabsActivity"></activity>
     </application>
 
 </manifest>

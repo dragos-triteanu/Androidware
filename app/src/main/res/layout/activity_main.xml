@@ -58,6 +58,13 @@
             android:text="Fragment View Pager"
             android:layout_weight="1"/>
 
+        <Button
+            android:id="@+id/goToTabs"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Tabs"
+            android:layout_weight="1"/>
+
 
     </LinearLayout>
 

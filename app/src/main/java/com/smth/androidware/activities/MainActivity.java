@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.goToFragmentViewPager)
     Button goToFragmentViewPager;
 
+    @BindView(R.id.goToTabs)
+    Button goToTabs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,FragmentViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goToTabs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,TabsActivity.class);
                 startActivity(intent);
             }
         });
