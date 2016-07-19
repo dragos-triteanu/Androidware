@@ -65,6 +65,13 @@
             android:text="Tabs"
             android:layout_weight="1"/>
 
+        <Button
+            android:id="@+id/goToSnackbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Snackbar"
+            android:layout_weight="1"/>
+
 
     </LinearLayout>
 

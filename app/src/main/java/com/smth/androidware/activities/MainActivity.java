@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.goToTabs)
     Button goToTabs;
 
+    @BindView(R.id.goToSnackbar)
+    Button goToSnackbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,5 +100,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        goToSnackbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SnackbarActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
