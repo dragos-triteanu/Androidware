@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.smth.androidware">
+    package="com.enginizer">
 
     <application
         android:allowBackup="true"
@@ -8,23 +8,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
-        <activity android:name=".activities.ToolbarActivity" />
-        <activity android:name=".activities.RecyclerViewActivity" />
-        <activity android:name=".activities.NavigationDrawerActivity" />
-        <activity android:name=".activities.AnimationsActivity" />
-        <activity android:name=".activities.TransitionActivity" />
-        <activity android:name=".activities.SharedElementActivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity
+            android:name="com.enginizer.activities.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/MaterialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SimpleViewPagerActivity" />
-        <activity android:name=".activities.FragmentViewPagerActivity" />
-        <activity android:name=".activities.TabsActivity" />
-        <activity android:name=".activities.SnackbarActivity"></activity>
     </application>
 
 </manifest>

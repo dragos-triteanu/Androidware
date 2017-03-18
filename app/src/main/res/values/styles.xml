@@ -16,10 +16,11 @@
         <item name="android:colorButtonNormal">#75d228</item>
         <!--<item name="android:colorControlActivated">#0cf427</item>-->
     </style>
-    
+
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="android:textColorSecondary">@android:color/white</item> <!-- Color of overflow menu ... -->
+        <item name="android:textColorSecondary">@android:color/white
+        </item> <!-- Color of overflow menu ... -->
     </style>
 
 
@@ -27,13 +28,17 @@
         <item name="android:textColorPrimary">#9E9E9E</item>
         <item name="android:background">#fffcfff6</item>
     </style>
-    
+
+    <style name="MaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="MaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <!-- Required api level 21 (Lollipop)-->
     <!--<style name="AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">-->
-        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
-        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
     <!--</style>-->
 
 </resources>

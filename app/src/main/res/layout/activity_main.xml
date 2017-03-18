@@ -1,79 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.smth.androidware.activities.MainActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <LinearLayout
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
 
-        <Button
-            android:id="@+id/goToToolbarBtn"
-            android:layout_height="wrap_content"
+        <include
+            layout="@layout/component_app_bar"
             android:layout_width="match_parent"
-            android:text="Toolbar Activity"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent" />
 
-        <Button
-            android:id="@+id/goToRecyclerViewBtn"
-            android:layout_height="wrap_content"
+        <!-- Here is where the fragments will be inserted as the nav content, when selecting a navigation menu item.-->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:text="Recycler View Activity"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"
+            android:id="@+id/nav_content">
 
-        <Button
-            android:id="@+id/goToNavigationDrawer"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Navigation Drawer Activity"
-            android:layout_weight="1"/>
+        </FrameLayout>
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/component_nav_header"
+            app:menu="@menu/nav_drawer_menu" />
 
-        <Button
-            android:id="@+id/goToAnimations"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Animations Activity"
-            android:layout_weight="1"/>
+    </android.support.v4.widget.DrawerLayout>
 
-        <Button
-            android:id="@+id/goToSimpleViewPager"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Simple View Pager"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/goToFragmentViewPager"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Fragment View Pager"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/goToTabs"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Tabs"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/goToSnackbar"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Snackbar"
-            android:layout_weight="1"/>
+</LinearLayout>
 
 
-    </LinearLayout>
-
-
-</RelativeLayout>
