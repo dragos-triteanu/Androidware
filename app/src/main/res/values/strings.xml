@@ -14,4 +14,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nav_page_2">Page 2</string>
     <string name="nav_page_1">Page 1</string>
+    <string name="title_activity_reschedule">Reschedule</string>
+    <string name="reschedule_name">Name</string>
+    <string name="reschedule_company">Company</string>
+    <string name="reschedule_memo">Save Notes</string>
+    <string name="reschedule_meeting">Save meeting to calendar</string>
+    <string name="reschedule_neverAsk">Never ask for this contact</string>
+    <string name="reschedule_cancel">No</string>
+    <string name="reschedule_yes">Yes</string>
 </resources>
