@@ -1,6 +1,6 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base mApplication theme. -->
     <style name="MaterialTheme" parent="ParentMaterialTheme">
 
     </style>

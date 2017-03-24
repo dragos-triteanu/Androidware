@@ -40,7 +40,9 @@ import android.widget.TimePicker;
 
 import com.enginizer.R;
 import com.enginizer.listener.CallStateBroadcastReciever;
+import com.enginizer.service.ScheduleService;
 import com.enginizer.util.AddressBookHelper;
+import com.enginizer.util.CallConstants;
 import com.enginizer.util.PreferencesHelper;
 
 import java.text.SimpleDateFormat;
@@ -104,7 +106,7 @@ public class ReScheduleActivity extends Activity implements AddressBookHelper.Ad
 
 
 		NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-		manager.cancel(CallStateBroadcastReciever.NOTIFICATION_ID);
+		manager.cancel(ScheduleService.NOTIFICATION_ID);
 
 		nameField = (EditText) findViewById(R.id.nameField);
 		memoField = (EditText) findViewById(R.id.memoField);
@@ -178,13 +180,13 @@ public class ReScheduleActivity extends Activity implements AddressBookHelper.Ad
 	private void handleIntent() {
 
 		// get the phone number out of the intent
-		phoneNumber = getIntent().getStringExtra(CallStateBroadcastReciever.INTENT_PHONE_NUMBER);
+		phoneNumber = getIntent().getStringExtra(CallConstants.INTENT_PHONE_NUMBER);
 
 		// get the call start time and call end time
 		callStartTime = (Calendar) getIntent().getSerializableExtra(
-				CallStateBroadcastReciever.INTENT_CALL_STARTED_TIME);
+				CallConstants.INTENT_CALL_STARTED_TIME);
 		callStopTime = (Calendar) getIntent().getSerializableExtra(
-				CallStateBroadcastReciever.INTENT_CALL_STOP_TIME);
+				CallConstants.INTENT_CALL_STOP_TIME);
 
 		// set the contact badge photo
 		quickContactBadge.assignContactFromPhone(phoneNumber, true);
