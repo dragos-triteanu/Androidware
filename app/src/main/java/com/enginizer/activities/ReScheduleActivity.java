@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.provider.CalendarContract.Calendars;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -52,7 +53,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Stack;
 
-public class ReScheduleActivity extends Activity implements AddressBookHelper.AddressBookListener {
+public class ReScheduleActivity extends AppCompatActivity implements AddressBookHelper.AddressBookListener {
 
 	public static final String TAG = "ReScheduleActivity:";
 

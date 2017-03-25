@@ -1,12 +1,15 @@
 package com.enginizer.model;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Created by drago on 3/24/2017.
  */
 
-public class CallDetails {
+public class CallDetails implements Serializable {
 
     private String phoneNumber;
     private Calendar callStartedTime;

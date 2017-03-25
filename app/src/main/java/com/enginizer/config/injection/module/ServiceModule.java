@@ -1,6 +1,7 @@
 package com.enginizer.config.injection.module;
 
 import com.enginizer.service.ScheduleService;
+import com.enginizer.service.CalendarService;
 
 import javax.inject.Singleton;
 
@@ -18,4 +19,9 @@ public class ServiceModule {
     ScheduleService provideScheduleService(){
         return new ScheduleService();
     }
+
+    @Provides
+    @Singleton
+    CalendarService provideCalendarService(){ return new CalendarService();}
+
 }

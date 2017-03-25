@@ -10,6 +10,7 @@ import android.support.v7.app.NotificationCompat;
 import com.enginizer.R;
 import com.enginizer.activities.ReScheduleActivity;
 import com.enginizer.model.CallDetails;
+import com.enginizer.util.CallConstants;
 
 import static com.enginizer.util.CallConstants.INTENT_CALL_STARTED_TIME;
 import static com.enginizer.util.CallConstants.INTENT_CALL_STOP_TIME;
@@ -37,6 +38,8 @@ public class ScheduleService {
         rescheduleActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         Intent snoozeIntent = new Intent(ctx, NotificationActionService.class).setAction("snooze");
+        snoozeIntent.putExtra(CallConstants.CALL_DETAILS_EXTRA,callDetails);
+        snoozeIntent.putExtra(CallConstants.NOTIFICATION_ID,NOTIFICATION_ID);
 
         PendingIntent reschedulerPendingIntent = PendingIntent.getActivity(ctx, 0, rescheduleActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent cancelPendingIntent = PendingIntent.getService(ctx, 0, snoozeIntent, PendingIntent.FLAG_ONE_SHOT);

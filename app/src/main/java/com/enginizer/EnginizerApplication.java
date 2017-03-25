@@ -1,6 +1,7 @@
 package com.enginizer;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.enginizer.config.injection.component.ApplicationComponent;
 import com.enginizer.config.injection.component.DaggerApplicationComponent;
@@ -8,14 +9,21 @@ import com.enginizer.config.injection.module.ServiceModule;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
+import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
 /**
  * Created by xPku on 3/19/17.
  */
 
 public class EnginizerApplication extends Application {
+    private static final String TAG = "EnginizerApplication: ";
 
     private Tracker mTracker;
+    public static final String ASSETS_APP_PROPERTIES = "assets/app.properties";
     private ApplicationComponent mAppComponent;
+    public static PropertiesConfiguration PROPERTIES;
 
     @Override
     public void onCreate() {
@@ -24,6 +32,8 @@ public class EnginizerApplication extends Application {
         mAppComponent = DaggerApplicationComponent.builder()
                 .serviceModule(new ServiceModule())
                 .build();
+
+        loadAssetProperties();
     }
 
     /**
@@ -40,6 +50,17 @@ public class EnginizerApplication extends Application {
         return mTracker;
     }
 
+    /**
+     * Loads the app.properties property file from the assets folder.
+     */
+    private void loadAssetProperties() {
+        Configurations configs = new Configurations();
+        try {
+            PROPERTIES = configs.properties(ASSETS_APP_PROPERTIES);
+        } catch (ConfigurationException e) {
+            Log.e(TAG,e.getStackTrace().toString());
+        }
+    }
 
     public ApplicationComponent getApplicationComponent() {
         return mAppComponent;

@@ -12,4 +12,8 @@ public class CallConstants {
     public static final String INTENT_CALL_STARTED_TIME = "CALL_STARTED_TIME";
     public static final String INTENT_CALL_STOP_TIME = "CALL_STOP_TIME";
 
+
+    public static final String CALL_DETAILS_EXTRA = "callDetails";
+
+    public static final String NOTIFICATION_ID = "NotificationId";
 }

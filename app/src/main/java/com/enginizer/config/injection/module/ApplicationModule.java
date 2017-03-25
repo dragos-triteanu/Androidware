@@ -2,11 +2,6 @@ package com.enginizer.config.injection.module;
 
 import android.app.Application;
 
-
-import com.enginizer.service.ScheduleService;
-
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 
