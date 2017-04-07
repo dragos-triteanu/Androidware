@@ -1,6 +1,7 @@
 package com.enginizer;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 import com.enginizer.config.injection.component.ApplicationComponent;
@@ -22,14 +23,14 @@ public class EnginizerApplication extends Application {
 
     private Tracker mTracker;
     public static final String ASSETS_APP_PROPERTIES = "assets/app.properties";
-    private ApplicationComponent mAppComponent;
+    public static ApplicationComponent APP;
     public static PropertiesConfiguration PROPERTIES;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        mAppComponent = DaggerApplicationComponent.builder()
+        APP = DaggerApplicationComponent.builder()
                 .serviceModule(new ServiceModule())
                 .build();
 
@@ -62,12 +63,8 @@ public class EnginizerApplication extends Application {
         }
     }
 
-    public ApplicationComponent getApplicationComponent() {
-        return mAppComponent;
-    }
-
-    public void setApplicationComponent(ApplicationComponent mAppComponent) {
-        this.mAppComponent = mAppComponent;
+    public static EnginizerApplication get(Context context) {
+        return (EnginizerApplication) context.getApplicationContext();
     }
 
     public Tracker getmTracker() {

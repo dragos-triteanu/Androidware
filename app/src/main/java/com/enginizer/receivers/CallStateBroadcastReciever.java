@@ -1,4 +1,4 @@
-package com.enginizer.listener;
+package com.enginizer.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -32,7 +32,7 @@ public class CallStateBroadcastReciever extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        ((EnginizerApplication) context.getApplicationContext()).getApplicationComponent().inject(this);
+        EnginizerApplication.APP.inject(this);
 
         String intentAction = intent.getAction();
         if (intentAction.equals(OUTGOING_CALL_ACTION)) {

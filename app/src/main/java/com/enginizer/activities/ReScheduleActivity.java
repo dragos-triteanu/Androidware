@@ -3,7 +3,6 @@ package com.enginizer.activities;
 import android.Manifest;
 import android.accounts.Account;
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.NotificationManager;
@@ -20,7 +19,6 @@ import android.os.Bundle;
 import android.provider.CalendarContract.Calendars;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -39,8 +37,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 
+import com.enginizer.EnginizerApplication;
 import com.enginizer.R;
-import com.enginizer.listener.CallStateBroadcastReciever;
 import com.enginizer.service.ScheduleService;
 import com.enginizer.util.AddressBookHelper;
 import com.enginizer.util.CallConstants;
@@ -53,7 +51,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Stack;
 
-public class ReScheduleActivity extends AppCompatActivity implements AddressBookHelper.AddressBookListener {
+public class ReScheduleActivity extends EnginizerActivity implements AddressBookHelper.AddressBookListener {
 
 	public static final String TAG = "ReScheduleActivity:";
 
@@ -381,6 +379,11 @@ public class ReScheduleActivity extends AppCompatActivity implements AddressBook
 			setIntent(intentStack.pop());
 			handleIntent();
 		}
+	}
+
+	@Override
+	void injectDependencies() {
+		EnginizerApplication.APP.inject(this);
 	}
 
 	public static class TimePickerFragment extends DialogFragment implements

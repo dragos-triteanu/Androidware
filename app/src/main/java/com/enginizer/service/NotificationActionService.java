@@ -33,7 +33,7 @@ public class NotificationActionService extends IntentService {
     @Override
     public void onCreate() {
         super.onCreate();
-        ((EnginizerApplication) getApplication()).getApplicationComponent().inject(this);
+        EnginizerApplication.APP.inject(this);
     }
 
     @Override

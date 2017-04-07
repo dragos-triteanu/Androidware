@@ -22,4 +22,7 @@
     <string name="reschedule_neverAsk">Never ask for this contact</string>
     <string name="reschedule_cancel">No</string>
     <string name="reschedule_yes">Yes</string>
+    <string name="dialog_action_ok">Ok</string>
+    <string name="dialog_error_title">Error</string>
+    <string name="dialog_general_error_Message">Some Message</string>
 </resources>
