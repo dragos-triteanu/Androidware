@@ -5,9 +5,29 @@
     tools:context="com.enginizer.fragments.nav.Page1">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Page 1" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Page 1" />
+
+
+        <Button
+            android:id="@+id/btnCreateNotify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="Create Notification" />
+
+    </LinearLayout>
+
 
 </FrameLayout>
