@@ -4,15 +4,11 @@ import android.app.IntentService;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
-import android.provider.CalendarContract;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.enginizer.EnginizerApplication;
 import com.enginizer.model.CallDetails;
 import com.enginizer.util.CallConstants;
-
-import java.lang.reflect.Method;
 
 import javax.inject.Inject;
 
@@ -47,19 +43,9 @@ public class NotificationActionService extends IntentService {
         if ("snooze".equals(action)) {
             calendarService.addEvent(this, callDetails);
             notificationManager.cancel(intExtra);
-            closeNotificationBar();
         }
-    }
 
-    public void closeNotificationBar(){
-        try {
-            Object sbservice = getSystemService("statusbar");
-            Class<?> statusbarManager = Class.forName("android.app.StatusBarManager");
-            Method showsb = statusbarManager.getMethod("expand");
-            showsb.invoke(sbservice);
-        }catch (Exception e){
-            Log.e(TAG, e.getStackTrace().toString());
-        }
+
     }
 }
 

@@ -1,5 +1,8 @@
 package com.enginizer.service;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,14 +12,18 @@ import android.os.IBinder;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
-@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+import com.enginizer.R;
+
+
 /**
  * Due to an android bug: http://stackoverflow.com/questions/17911883/cannot-get-the-notificationlistenerservice-class-to-work
  * This class' name should be changed before each debug use, because if not, onReceive will never get called.
  */
-public class CalendarNotificationListenerService extends NotificationListenerService {
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+public class CalendaxNotificationListenerService extends NotificationListenerService {
 
     private String TAG = this.getClass().getSimpleName();
     private CalendarNotificationBroadcastReceiver receiver;
@@ -53,6 +60,7 @@ public class CalendarNotificationListenerService extends NotificationListenerSer
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
         Log.i(TAG,"**********  onNotificationPosted");
@@ -60,8 +68,34 @@ public class CalendarNotificationListenerService extends NotificationListenerSer
         Intent i = new  Intent("com.enginizer.NOTIFICATION_LISTENER_EXAMPLE");
         i.putExtra("notification_event","onNotificationPosted :" + sbn.getPackageName() + "\n");
         sendBroadcast(i);
+        if(sbn.getKey().contains("calendar")){
+            CalendaxNotificationListenerService.this.cancelNotification(sbn.getKey());
 
-        CalendarNotificationListenerService.this.cancelAllNotifications();
+            Intent snoozeIntent = new Intent(getApplicationContext(), NotificationActionService.class).setAction("snooze");
+
+            PendingIntent cancelPendingIntent = PendingIntent.getService(getApplicationContext(), 0, snoozeIntent, PendingIntent.FLAG_ONE_SHOT);
+
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(getApplicationContext());
+
+            notificationBuilder.setAutoCancel(true)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
+                    .setSmallIcon(R.drawable.callerq_icon)
+                    .setTicker("Hearty365")
+                    .setContentTitle("Add a reminder")
+                    .setContentText("For your callDetails to: " + "x")
+                    .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND | Notification.FLAG_AUTO_CANCEL | Notification.FLAG_ONGOING_EVENT)
+                    .setContentInfo("Info");
+
+            notificationBuilder.addAction(new NotificationCompat.Action(0,"Snooze",cancelPendingIntent));
+
+            NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(1, notificationBuilder.build());
+        }
+
+
+
+
     }
 
     @Override
@@ -85,7 +119,6 @@ public class CalendarNotificationListenerService extends NotificationListenerSer
             String intentAction = intent.getAction();
             Log.i(TAG, "********** " + intentAction);
 
-            CalendarNotificationListenerService.this.cancelAllNotifications();
         }
     }
 
